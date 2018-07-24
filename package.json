@@ -5,13 +5,14 @@
     "main": "index.js",
     "scripts": {
         "test:local": "./node_modules/.bin/wdio ./config/local.conf.js",
-        "test:headless": "./node_modules/.bin/wdio ./config/headless.conf.js",
+        "test:headless": "./node_modules/.bin/wdio ./config/headless-jenkins.conf.js",
         "precommit": "./node_modules/.bin/eslint ./**/*.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "chai": "^4.1.2",
         "wdio": "^2.0.2"
     },
     "devDependencies": {

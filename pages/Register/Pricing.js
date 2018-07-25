@@ -2,6 +2,10 @@
  * Page object for pricing page
  */
 class PricingPage {
+    constructor() {
+        this.url = '/';
+    }
+
     /**
      * Page elements
      */
@@ -27,6 +31,14 @@ class PricingPage {
 
     get premiumSignUpButton() {
         return $('.row:nth-child(2) div:nth-child(4) .pricing-card button');
+    }
+
+    /**
+     * Navigate to Pricing page
+     */
+    navigateToUrl() {
+        browser.url(this.url);
+        browser.pause(3000);
     }
 }
 

@@ -3,7 +3,7 @@
  */
 class RegisterPage {
     constructor() {
-        this.url = 'http://register.postured.io/register';
+        this.url = '/register';
     }
 
     /**
@@ -61,6 +61,10 @@ class RegisterPage {
         return $('#signinLink');
     }
 
+    get accountCard() {
+        return $('div .account__card');
+    }
+
     /**
      * Register user
      *
@@ -74,7 +78,7 @@ class RegisterPage {
         this.usernameField.setValue(username);
         this.emailField.setValue(email);
         this.passwordField.setValue(password);
-        // this.signUpButton.click();
+        this.signUpButton.click();
     }
 
     /**

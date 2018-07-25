@@ -1,4 +1,4 @@
-const customCommands = require('../custom-commands');
+const url = require('./urls');
 
 exports.config = {
     specs: [
@@ -18,7 +18,7 @@ exports.config = {
 
     screenshotPath: 'screenshots',
 
-    baseUrl: 'http://http://register.postured.io',
+    baseUrl: url[process.env.ENV][process.env.APP],
 
     waitforTimeout: 10000,
 
@@ -42,9 +42,23 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     before: (capabilities) => {
-        customCommands.load();
+        // customCommands.load();
         if (capabilities.type === 'mobile') {
             browser.windowHandleSize({ width: 411, height: 731 });
         }
     },
+
+    /**
+    * Gets executed just before initialising the webdriver session and test framework. It allows you
+    * to manipulate configurations depending on the capability or spec.
+    * @param {Object} config wdio configuration object
+    * @param {Array.<Object>} capabilities list of capabilities details
+    * @param {Array.<String>} specs List of spec file paths that are to be run
+    */
+    beforeSession: (config, capabilities, [specs]) => {
+        if (!specs.includes(process.env.APP)) {
+            process.exit();
+        }
+    },
+
 };

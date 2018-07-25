@@ -2,6 +2,10 @@
  * Page object for confirmation page
  */
 class ConfirmationPage {
+    constructor() {
+        this.url = '/confirmation';
+    }
+
     /**
      * Page elements
      */

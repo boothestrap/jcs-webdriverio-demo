@@ -6,13 +6,13 @@ const object = {
         browserName: 'chrome',
 
     },
-    {
-        maxInstances: 5,
-        browserName: 'chrome',
-        type: 'mobile',
+        // {
+        //     maxInstances: 5,
+        //     browserName: 'chrome',
+        //     type: 'mobile',
 
-    }],
-
+        // }
+    ],
 };
 
 const newConfig = Object.assign(defaultConfig, object);

@@ -57,12 +57,16 @@ class RegisterPage {
         return $('#signupBtn');
     }
 
-    get signInLink() {
+    get logInLink() {
         return $('#signinLink');
     }
 
     get accountCard() {
         return $('div .account__card');
+    }
+
+    get loader() {
+        return $('.load.loaded');
     }
 
     /**
@@ -86,7 +90,7 @@ class RegisterPage {
      */
     navigateToUrl() {
         browser.url(this.url);
-        browser.pause(3000);
+        browser.waitForNotVisible(this.loader);
     }
 }
 

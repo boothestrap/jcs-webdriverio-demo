@@ -1,7 +1,5 @@
-const { toLowerCase } = require('./toLowerCase');
-const { enter } = require('./enter');
+const { waitForNotVisible } = require('./waitForNotVisible');
 
 module.exports.load = () => {
-    browser.addCommand('toLowerCase', toLowerCase);
-    browser.addCommand('enter', enter);
+    browser.addCommand('waitForNotVisible', waitForNotVisible);
 };

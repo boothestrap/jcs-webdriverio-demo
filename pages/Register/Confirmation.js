@@ -16,6 +16,14 @@ class ConfirmationPage {
     get subHeading() {
         return $('.account__head .account__subhead ');
     }
+
+    /**
+     * Navigate to confirmation page
+     */
+    navigateToUrl() {
+        browser.url(this.url);
+        browser.waitForNotVisible(this.loader);
+    }
 }
 
 module.exports = new ConfirmationPage();

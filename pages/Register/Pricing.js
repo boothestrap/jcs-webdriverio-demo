@@ -33,12 +33,16 @@ class PricingPage {
         return $('.row:nth-child(2) div:nth-child(4) .pricing-card button');
     }
 
+    get loader() {
+        return $('.load.loaded');
+    }
+
     /**
      * Navigate to Pricing page
      */
     navigateToUrl() {
         browser.url(this.url);
-        browser.pause(3000);
+        browser.waitForNotVisible(this.loader);
     }
 }
 

@@ -1,4 +1,5 @@
 const url = require('./urls');
+const customCommands = require('../custom-commands');
 
 const { ENV } = process.env;
 const { APP } = process.env;
@@ -58,8 +59,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     before: (capabilities) => {
-        // customCommands.load();
-
+        customCommands.load();
         if (capabilities.type === 'mobile') {
             browser.windowHandleSize({ width: 411, height: 731 });
         }

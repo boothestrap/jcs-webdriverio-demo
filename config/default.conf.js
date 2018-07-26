@@ -1,5 +1,14 @@
 const url = require('./urls');
 
+const { ENV } = process.env;
+const { APP } = process.env;
+
+if (!ENV || !APP || !['qa', 'dev', 'prod'].includes(ENV.trim()) || !['register', 'app'].includes(APP.trim())) {
+    // eslint-disable-next-line
+    console.log('Please use the following format when running the test script: ENV=dev|qa|prod APP=register|app [script]');
+    process.exit();
+}
+
 exports.config = {
     specs: [
         './tests/**/*.js',
@@ -35,6 +44,13 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
     },
+    /**
+      * Gets executed once before all workers get launched.
+      * @param {Object} config wdio configuration object
+      * @param {Array.<Object>} capabilities list of capabilities details
+      */
+    onPrepare: () => {
+    },
 
     /**
      * Gets executed before test execution begins. At this point you can access to all global
@@ -43,6 +59,7 @@ exports.config = {
      */
     before: (capabilities) => {
         // customCommands.load();
+
         if (capabilities.type === 'mobile') {
             browser.windowHandleSize({ width: 411, height: 731 });
         }

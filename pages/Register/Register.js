@@ -54,7 +54,7 @@ class RegisterPage {
     }
 
     get signUpButton() {
-        return $('#signupBtn');
+        return $('#next');
     }
 
     get logInLink() {
@@ -69,6 +69,9 @@ class RegisterPage {
         return $('.load.loaded');
     }
 
+    get back() {
+        return $('#back');
+    }
     /**
      * Register user
      *

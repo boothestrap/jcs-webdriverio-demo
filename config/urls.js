@@ -5,8 +5,8 @@ module.exports = {
     },
 
     dev: {
-        register: 'localhost:3000',
-        app: 'localhost:3000',
+        register: 'http://localhost:3000',
+        app: 'http://localhost:3000',
     },
 
     prod: {

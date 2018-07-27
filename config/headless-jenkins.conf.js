@@ -6,6 +6,15 @@ const object = {
         chromeOptions: {
             args: ['--headless', '--disable-gpu', '--window-size=1280,800'],
         },
+    },
+    {
+        maxInstances: 5,
+        browserName: 'chrome',
+        type: 'mobile',
+        chromeOptions: {
+            args: ['--headless', '--disable-gpu', '--window-size=1280,800'],
+        },
+
     }],
 };
 

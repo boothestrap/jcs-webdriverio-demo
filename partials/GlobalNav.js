@@ -30,19 +30,37 @@ class GlobalNav {
     }
 
     get profileDropdown() {
-        return $('svg.mdi-icon.topbar__avatar-icon');
+        return $('#account-dropdown');
     }
 
     get userProfile() {
-        return $('.lnr-user');
+        return $('#profile-top-nav');
     }
 
     get paymentInfo() {
-        return $('.lnr-calendar-full');
+        return $('#payment-info-top-nav');
     }
 
     get logOut() {
-        return $('.topbar__link-icon.lnr.lnr-exit');
+        return $('#logout-top-nav');
+    }
+
+    clickProfile() {
+        this.profileDropdown.click();
+        this.userProfile.waitForVisible();
+        this.userProfile.click();
+    }
+
+    clickPaymentInfo() {
+        this.profileDropdown.click();
+        this.paymentInfo.waitForVisible();
+        this.paymentInfo.click();
+    }
+
+    clickLogout() {
+        this.profileDropdown.click();
+        this.logOut.waitForVisible();
+        this.logOut.click();
     }
 }
 module.exports = new GlobalNav();

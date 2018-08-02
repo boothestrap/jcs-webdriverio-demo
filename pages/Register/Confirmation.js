@@ -9,18 +9,22 @@ class ConfirmationPage {
     /**
      * Page elements
      */
-    get heading() {
+    get heading () {
         return $('.account__head .account__title');
     }
 
-    get subHeading() {
+    get subHeading () {
         return $('.account__head .account__subhead ');
+    }
+
+    get loader () {
+        return $('.load.loaded');
     }
 
     /**
      * Navigate to confirmation page
      */
-    navigateToUrl() {
+    navigateToUrl () {
         browser.url(this.url);
         browser.waitForNotVisible(this.loader);
     }

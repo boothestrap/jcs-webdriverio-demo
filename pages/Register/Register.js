@@ -9,66 +9,69 @@ class RegisterPage {
     /**
      * Page elements
      */
-    get heading() {
+    get heading () {
         return $('.account__head .account__title');
     }
 
-    get subHeading() {
+    get subHeading () {
         return $('.account__head .account__subhead');
     }
 
-    get companyField() {
+    get companyField () {
         return $('#companyname');
     }
 
-    get companyErrorMsg() {
+    get companyErrorMsg () {
         return $('#companyname+.text-help');
     }
 
-    get usernameField() {
+    get usernameField () {
         return $('#usernameField');
     }
 
-    get usernameErrorMsg() {
+    get usernameErrorMsg () {
         return $('#usernameField+.text-help');
     }
 
-    get emailField() {
+    get emailField () {
         return $('#emailField');
     }
 
-    get emailErrorMsg() {
+    get emailErrorMsg () {
         return $('#emailField+.text-help');
     }
 
-    get passwordField() {
+    get passwordField () {
         return $('#passwordField');
     }
 
-    get passwordErrorMsg() {
+    get passwordErrorMsg () {
         return $('#passwordField+.text-help');
     }
 
-    get passwordToggle() {
+    get passwordToggle () {
         return $('#showPasswordBtn');
     }
 
-    get signUpButton() {
-        return $('#signupBtn');
+    get signUpButton () {
+        return $('#next');
     }
 
-    get logInLink() {
+    get logInLink () {
         return $('#signinLink');
     }
 
-    get accountCard() {
+    get accountCard () {
         return $('div .account__card');
     }
 
-    get loader() {
+    get loader () {
         return $('.load.loaded');
     }
 
+    get back () {
+        return $('#back');
+    }
     /**
      * Register user
      *
@@ -83,6 +86,13 @@ class RegisterPage {
         this.emailField.setValue(email);
         this.passwordField.setValue(password);
         this.signUpButton.click();
+    }
+
+    enterValues(company, username, email, password) {
+        this.companyField.setValue(company);
+        this.usernameField.setValue(username);
+        this.emailField.setValue(email);
+        this.passwordField.setValue(password);
     }
 
     /**

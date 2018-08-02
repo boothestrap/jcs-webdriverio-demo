@@ -3,6 +3,6 @@
  * @param {Object} element this is a webdriver object
  */
 module.exports.waitForNotVisible = (element) => {
-    element.waitForVisible(2000);
-    element.waitForVisible(2000, true);
+    element.waitForVisible(3000);
+    element.waitForVisible(3000, true);
 };

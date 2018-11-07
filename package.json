@@ -4,8 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test:local": "./node_modules/.bin/wdio ./config/local.conf.js",
-        "test:headless": "./node_modules/.bin/wdio ./config/headless-jenkins.conf.js",
+        "test": "./node_modules/.bin/wdio ./config/local.conf.js",
         "precommit": "./node_modules/.bin/eslint ./**/*.js"
     },
     "keywords": [],
@@ -13,6 +12,9 @@
     "license": "ISC",
     "dependencies": {
         "chai": "^4.1.2",
+        "chrome-launcher": "^0.10.2",
+        "lighthouse": "^3.0.3",
+        "lighthouse-logger": "^1.0.1",
         "wdio": "^2.0.2"
     },
     "devDependencies": {

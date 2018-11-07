@@ -1,18 +1,6 @@
-const url = require('./urls');
-const customCommands = require('../custom-commands');
-
-const { ENV } = process.env;
-const { APP } = process.env;
-
-if (!ENV || !APP || !['qa', 'dev', 'prod'].includes(ENV.trim()) || !['register', 'app'].includes(APP.trim())) {
-    // eslint-disable-next-line
-    console.log('Please use the following format when running the test script: ENV=dev|qa|prod APP=register|app [script]');
-    process.exit();
-}
-
 exports.config = {
     specs: [
-        './tests/**/*.js',
+        './tests/*.js',
     ],
     exclude: [],
     maxInstances: 10,
@@ -28,9 +16,9 @@ exports.config = {
 
     screenshotPath: 'screenshots',
 
-    baseUrl: url[process.env.ENV][process.env.APP],
+    baseUrl: 'https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount&followup=https%3A%2F%2Faccounts.google.com%2FManageAccount&flowName=GlifWebSignIn&flowEntry=ServiceLogin',
 
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
 
     connectionRetryTimeout: 90000,
 
@@ -44,6 +32,7 @@ exports.config = {
 
     mochaOpts: {
         ui: 'bdd',
+        timeout: 30000,
     },
     /**
       * Gets executed once before all workers get launched.
@@ -59,7 +48,6 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     before: (capabilities) => {
-        customCommands.load();
         if (capabilities.type === 'mobile') {
             browser.windowHandleSize({ width: 411, height: 731 });
         }
@@ -72,10 +60,4 @@ exports.config = {
     * @param {Array.<Object>} capabilities list of capabilities details
     * @param {Array.<String>} specs List of spec file paths that are to be run
     */
-    beforeSession: (config, capabilities, [specs]) => {
-        if (!specs.includes(process.env.APP)) {
-            process.exit();
-        }
-    },
-
 };

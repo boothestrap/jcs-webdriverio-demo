@@ -1,2 +1,1 @@
-# posture-automated-testing
-
+# jcs-webdriverio-demo

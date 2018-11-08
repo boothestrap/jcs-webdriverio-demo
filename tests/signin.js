@@ -1,5 +1,5 @@
-const signInPage = require('../pages/SignIn');
 const { expect } = require('chai');
+const signInPage = require('../pages/SignIn');
 const data = require('../data/test.data');
 // const forgotPasswordPage = require('../pages/ForgotPassword');
 
@@ -28,7 +28,7 @@ describe('sign in tests', () => {
             signInPage.passwordField.setValue(data.password);
             signInPage.rememberMe.click();
             signInPage.signInButton.click();
-            expect(browser.getUrl()).to.equal(`https://courses.ultimateqa.com/collections`);
+            expect(browser.getUrl()).to.equal('https://courses.ultimateqa.com/collections');
         });
     });
 });

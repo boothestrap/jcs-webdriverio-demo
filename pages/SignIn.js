@@ -41,6 +41,13 @@ class SignInPage {
     get errorMessage() {
         return $('.notifications-error__list-item');
     }
+
+    /**
+     * Navigate to Sign In page
+     */
+    navigateToUrl() {
+        browser.url(this.url);
+    }
 }
 
 module.exports = new SignInPage();

@@ -6,7 +6,7 @@ exports.config = {
     maxInstances: 10,
     capabilities: [{
         maxInstances: 5,
-        browserName: 'firefox',
+        browserName: 'chrome',
     }],
     sync: true,
     logLevel: 'error',
@@ -16,7 +16,7 @@ exports.config = {
 
     screenshotPath: 'screenshots',
 
-    baseUrl: 'https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2FManageAccount&followup=https%3A%2F%2Faccounts.google.com%2FManageAccount&flowName=GlifWebSignIn&flowEntry=ServiceLogin',
+    baseUrl: 'https://courses.ultimateqa.com/users',
 
     waitforTimeout: 30000,
 

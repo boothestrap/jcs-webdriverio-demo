@@ -3,7 +3,7 @@
  */
 class SignInPage {
     constructor() {
-        this.url = '/';
+        this.url = 'https://courses.ultimateqa.com/users/sign_in';
     }
 
     /**
@@ -23,7 +23,7 @@ class SignInPage {
     }
 
     get rememberMe() {
-        return $('.user_remember_me');
+        return $('#user_remember_me');
     }
 
     get forgotPassword() {
